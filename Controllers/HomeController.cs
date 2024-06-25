@@ -169,7 +169,7 @@ namespace SistemaReservas.Controllers
                 properties
                 );
 
-            if (userFound.RolId == 5)
+            if (userFound.RolId == 5) //This number will be the ID of the role (Administrator) created in the database
             {
                 return RedirectToAction("Index", "Usuarios");
             }

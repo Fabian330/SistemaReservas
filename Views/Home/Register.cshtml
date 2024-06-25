@@ -25,7 +25,7 @@
         <div class="inputField">
             <input type="password" placeholder="Password" asp-for="Clave" required />
         </div>
-        <input type="hidden" value="6" asp-for="RolId" required /> @*The value will be the Id of the role client of the database to create clients automatically*@
+        <input type="hidden" value="6" asp-for="RolId" required /> @*The value will be the Id of the role (client) of the database to create clients automatically*@
         <button type="submit">Sign up</button>
         @if (ViewData["Message"] != null)
         {
