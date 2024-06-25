@@ -1,0 +1,44 @@
+﻿@model SistemaReservas.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_AdminLayout";
+}
+
+<div class="AdminContainer">
+<h1>Create a new user</h1>
+<hr />
+<div>
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="formFields">
+                <label>Name</label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+                <div class="formFields">
+                <label>Email</label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+                <div class="formFields">
+                <label>Password</label>
+                <input asp-for="Clave" class="form-control" />
+                <span asp-validation-for="Clave" class="text-danger"></span>
+            </div>
+                <div class="formFields">
+                <label>Role</label>
+                <select asp-for="RolId" class ="form-control" asp-items="ViewBag.RolId"></select>
+            </div>
+            <div>
+                    <input type="submit" value="Create" class="btnCreate" /> | <a class="btnBack" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

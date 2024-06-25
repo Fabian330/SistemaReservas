@@ -1,0 +1,43 @@
+﻿@model SistemaReservas.Models.Reservas
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
+}
+
+<div class="AdminContainer">
+<h1>Edit reservation</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="formFields">
+                <label>Reservation made</label>
+                <input asp-for="ReservaRealizada" class="form-control" />
+                <span asp-validation-for="ReservaRealizada" class="text-danger"></span>
+            </div>
+            <div class="formFields">
+                <label>Reserved day</label>
+                <input asp-for="DiaReservado" class="form-control" />
+                <span asp-validation-for="DiaReservado" class="text-danger"></span>
+            </div>
+            <div class="formFields">
+                <label>Amount</label>
+                <input asp-for="Monto" class="form-control" />
+                <span asp-validation-for="Monto" class="text-danger"></span>
+            </div>
+            <div class="formFields">
+                <label>User</label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                    <input type="submit" value="Save" class="btnEdit" /> | <a class="btnBack" asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>

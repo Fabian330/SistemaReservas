@@ -1,0 +1,61 @@
+﻿
+@model IEnumerable<SistemaReservas.Models.Reservas>
+@using System.Security.Claims;
+
+@{
+    ViewData["Title"] = "Reserve.com";
+
+    ClaimsPrincipal claimUser = User;
+    int Id = 0;
+    if (claimUser.Identity.IsAuthenticated)
+    {
+        
+    }
+}
+
+<div class="rsTable">
+    <h1>Reservations made</h1>
+    <div class="indexTable">
+        <div class="indexTableHeader">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Reservation made
+                </th>
+                <th>
+                    Reserved day
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    User
+                </th>
+            </tr>
+        </thead>
+        </div>
+        <div class="indexTableBody">
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="tdTest">
+                        @Html.DisplayFor(modelItem => item.ReservaRealizada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaReservado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+        </div>
+    </div>
+</div>

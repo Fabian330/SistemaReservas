@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SistemaReservas.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+}
+
+<div class="AdminContainer">
+<h1>Users</h1>
+
+<p>
+    <a class="btnCreate" href="/Usuarios/Create">Create New</a>
+</p>
+
+    <div class="indexTable">
+        <div class="indexTableHeader">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Password
+                        </th>
+                        <th>
+                            Role
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+        </div>
+        <div class="indexTableBody">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Correo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Clave)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rol.Nombre)
+                        </td>
+                        <td>
+                            <a class="btnEdit" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a class="btnDetails" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a class="btnDelete" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

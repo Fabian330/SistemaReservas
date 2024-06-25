@@ -1,0 +1,42 @@
+﻿@model SistemaReservas.Models.Usuario;
+@{
+    Layout = null;
+}
+
+@*Add the roles and create the administrator from the database*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve.com - Sign up</title>
+    <link rel="stylesheet" href="~/css/loginStyle.css?1.2" />
+</head>
+<body>
+    <form asp-controller="Home" asp-action="Register" method="post" class="registerContainer">
+        <h1>Sign up</h1>
+        <div class="inputField">
+            <input type="text" placeholder="Your name" asp-for="Nombre" required />
+        </div>
+        <div class="inputField">
+            <input type="text" placeholder="Email" asp-for="Correo" required />
+        </div>
+        <div class="inputField">
+            <input type="password" placeholder="Password" asp-for="Clave" required />
+        </div>
+        <input type="hidden" value="6" asp-for="RolId" required /> @*The value will be the Id of the role client of the database to create clients automatically*@
+        <button type="submit">Sign up</button>
+        @if (ViewData["Message"] != null)
+        {
+            <div class="message">
+                <label style="color:red">@ViewData["Message"]</label>
+            </div>
+        }
+        <div class="bottom">
+            <p>You already have an account? <a href="@Url.Action("Login", "Home")">Sign in</a></p>
+            <a class="btnHome" href="@Url.Action("Index", "Home")">Go to Homepage</a>
+        </div>
+    </form>
+</body>
+</html>

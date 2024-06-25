@@ -1,0 +1,46 @@
+﻿@model SistemaReservas.Models.Reservas
+@using System.Security.Claims;
+
+@{
+    ViewData["Title"] = "Reserve.com";
+
+    ClaimsPrincipal claimUser = User;
+    string username = "";
+    string Id = "";
+    if (claimUser.Identity.IsAuthenticated)
+    {
+        username = claimUser.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault();
+        Id = claimUser.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
+    }
+}
+
+<div class="reserve">
+    <div class="leftSide">
+        <img src="/images/makeReservation.jpg" alt=""/>
+    </div>
+    <div class="rightSide">
+        <form asp-action="CreateUserReservation" asp-controller="Reservas">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="formFields">
+                <input type="hidden" asp-for="ReservaRealizada" class="form-control" value="@DateTime.Now" />
+            </div>
+            <div class="formFields">
+                <label>Day of the reservation</label>
+                <input asp-for="DiaReservado" class="form-control" />
+                <span asp-validation-for="DiaReservado" class="text-danger"></span>
+            </div>
+            <p>The cost of the reservation will cost 100$ and you will pay on the day of the reservation.</p>
+            <div class="formFields">
+                <input type="hidden" asp-for="Monto" class="form-control" value="100$" />
+            </div>
+            <div class="formFields">
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId" hidden>
+                    <option selected="true">@Id</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Reserve now" class="btnReserve" />
+            </div>
+        </form>
+    </div>
+</div>

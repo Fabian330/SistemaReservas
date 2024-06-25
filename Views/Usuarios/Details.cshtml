@@ -1,0 +1,44 @@
+﻿@model SistemaReservas.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+}
+
+<div class="AdminContainer">
+<h1>User details</h1>
+
+<div>
+    <hr />
+    <dl>
+        <dt class = "col-sm-2">
+            Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <dt>
+            Password
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+        <dt>
+            Role
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rol.Nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btnEdit" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a class="btnBack" asp-action="Index">Back to List</a>
+</div>
+</div>

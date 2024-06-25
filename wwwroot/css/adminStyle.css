@@ -1,0 +1,335 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body {
+    background: #fff;
+    overflow-x:hidden;
+}
+
+nav {
+    background: #3BCBF9;
+    display: flex;
+    padding: 0 30px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo{
+    display: flex;
+    flex-direction: column;
+}
+
+nav .logo a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+    nav .login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        nav .login a {
+            text-decoration: none;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    nav .login .btn-out {
+        color: #fff;
+        background: #F40B0B;
+    }
+
+        nav .login .btn-out:hover {
+            background: #D80606;
+        }
+
+        nav .login .btn-out:active {
+            background: #FF3333;
+        }
+
+.sidebar {
+    background: #E3E3E3;
+    width: 20%;
+    height: calc(100vh - 80px);
+    position: absolute;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.sidebar .sideLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 10px;
+    gap: 30px;
+}
+
+.sidebar .sideLinks li{
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    list-style: none;
+}
+
+    .sidebar .sideLinks li a {
+        background: #fff;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .active {
+        border-left: 5px solid #3BCBF9;
+    }
+
+
+.AdminContainer {
+    background: #fff;
+    position: relative;
+    left: 20%;
+    width: calc(100% - 20%);
+    height: calc(100vh - 80px);
+    padding: 30px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction:column;
+}
+
+.AdminContainer h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+    .AdminContainer .btnCreate {
+        background: #1F6AFF;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .AdminContainer .btnCreate:hover {
+            background: #1759DD;
+        }
+
+        .AdminContainer .btnCreate:active {
+            background: #2D71F9;
+        }
+
+    .AdminContainer .indexTable {
+        margin-top: 40px;
+        background: #D6E7E2;
+        flex-grow: 1;
+        flex-basis: 500px;
+        max-height: 500px;
+        overflow-y: auto;
+        border-radius: 5px;
+        padding: 24px;
+        overflow-x: auto;
+        user-select: none;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .AdminContainer .indexTableHeader thead {
+        text-align: left;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: -24px;
+        background: #D6E7E2;
+    }
+
+        .AdminContainer .indexTableHeader thead th {
+            padding: 12px 10px;
+        }
+
+    .AdminContainer .indexTable .indexTableBody tbody {
+        max-height: 100px;
+        overflow-y: scroll;
+    }
+
+    .AdminContainer .indexTable table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .AdminContainer .indexTable table td {
+            padding: 20px 0 20px 12px;
+            cursor: default;
+        }
+
+            .AdminContainer .indexTable table td img {
+                max-width: 100px;
+            }
+
+        .AdminContainer .indexTable table tr td:first-child {
+            padding-left: 10px;
+        }
+
+        .AdminContainer .indexTable table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+            .AdminContainer .indexTable table tbody tr:hover {
+                background: #CCD8D5;
+            }
+
+    .AdminContainer .btnEdit {
+        background: #8827F5;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .AdminContainer .btnEdit:hover {
+            background: #7522D4;
+        }
+
+        .AdminContainer .btnEdit:active {
+            background: #963CFC;
+        }
+
+    .AdminContainer .btnDetails {
+        background: #E78325;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .AdminContainer .btnDetails:hover {
+            background: #D37822;
+        }
+
+        .AdminContainer .btnDetails:active {
+            background: #F89B43;
+        }
+
+    .AdminContainer .btnDelete {
+        background: #E43420;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .AdminContainer .btnDelete:hover {
+            background: #CE301D;
+        }
+
+        .AdminContainer .btnDelete:active {
+            background: #FC4F3B;
+        }
+
+    .AdminContainer .btnBack {
+        background: #2CE3AF;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .AdminContainer .btnBack:hover {
+            background: #28D1A1;
+        }
+
+
+        .AdminContainer .btnBack:active {
+            background: #3FF7C2;
+        }
+
+    .AdminContainer hr{
+        border: 0;
+        height: 2px;
+        background: lightgray;
+        margin-bottom: 20px;
+        margin-top: -10px;
+    }
+
+    .AdminContainer form{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .AdminContainer .formDelete {
+        display: unset;
+    }
+
+    .AdminContainer .formFields{
+        display: flex;
+        max-width: 33%;
+        align-items: center;
+    }
+
+    .AdminContainer .formFields input,
+    .AdminContainer .formFields select{
+        margin-left: auto;
+        width:200px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        outline: 0;
+    }
+
+    .AdminContainer h3{
+        margin-bottom: 20px;
+    }
+
+    .AdminContainer dl{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 300px;
+        border: 2px solid rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        margin-bottom: 40px;
+    }
+
+    .AdminContainer dd img {
+        max-width: 100px;
+    }

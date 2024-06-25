@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve.com - Sign in</title>
+    <link rel="stylesheet" href="~/css/loginStyle.css?1.2" />
+</head>
+<body>
+    <form asp-controller="Home" asp-action="Login" method="post" class="loginContainer">
+        <h1>Sign in</h1>
+        <div class="inputField">
+            <input type="text" placeholder="Email" name="email" required />
+        </div>
+        <div class="inputField">
+            <input type="password" placeholder="Password" name="password" required />
+        </div>
+        <button type="submit">Sign in</button>
+        @if (ViewData["Message"] != null)
+        {
+            <div class="message">
+                    <label style="color:red">@ViewData["Message"]</label>
+            </div>
+        }
+        <div class="bottom">
+            <p>You don't have an account? <a href="@Url.Action("Register", "Home")">Create an account</a></p>
+            <a class="btnHome" href="@Url.Action("Index", "Home")">Go to Homepage</a>
+        </div>
+    </form>
+</body>
+</html>

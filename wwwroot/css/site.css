@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url(../images/eventHall.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Navbar*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #EFEFEF;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 11px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.logo a{
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+
+.navLinks {
+    display: flex;
+    border-radius: 20px;
+    background: #B4B4B4;
+}
+
+nav .navLinks a {
+    display: flex;
+    padding: 5px 30px;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav .navLinks .sideL {
+    border-radius: 20px 0 0 20px;
+}
+
+nav .navLinks .sideR {
+    border-radius: 0 20px 20px 0;
+}
+
+nav .navLinks a:hover{
+    background: #9C9C9C;
+}
+
+nav .navLinks a:active {
+    background: #D0D0D0;
+}
+
+nav .login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav .login a {
+    text-decoration: none;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav .login .btn-reg {
+    color: #fff;
+    background: #FF9FEF;
+}
+
+    nav .login .btn-reg:hover {
+        background: #FF8DEC;
+    }
+
+    nav .login .btn-reg:active {
+        background: #FFAFF2;
+    }
+
+nav .login .btn-log {
+    color: #fff;
+    background: #0CC900;
+}
+
+    nav .login .btn-log:hover {
+        background: #0BB600;
+    }
+
+    nav .login .btn-log:active {
+        background: #24F317;
+    }
+
+nav .login .btn-out {
+    color: #fff;
+    background: #F40B0B;
+}
+
+    nav .login .btn-out:hover {
+        background: #D80606;
+    }
+
+    nav .login .btn-out:active {
+        background: #FF3333;
+    }
+
+/*Footer*/
+
+footer{
+    background: #EFEFEF;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 16px 0 16px 10%;
+    display: flex;
+    align-items: center;
+}
+
+/*Index*/
+
+.indexContainer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 200px);
+    color: #FFF;
+}
+
+.indexContainer div{
+    width: 60%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fade 2s;
+}
+
+    .indexContainer h1 {
+        font-size: 48px;
+    }
+
+    .indexContainer p {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+
+    .indexContainer a,
+    .reserve .rightSide .btnReserve{
+        text-decoration: none;
+        color: #FFF;
+        background: #FF9FEF;
+        padding: 20px 30px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        outline: none;
+        border: none
+    }
+
+        .indexContainer a:hover,
+        .reserve .rightSide .btnReserve:hover {
+            background: #FF8DEC;
+        }
+
+        .indexContainer a:active,
+        .reserve .rightSide .btnReserve:active {
+            background: #FFAFF2;
+        }
+
+/*Reserve*/
+
+.reserve {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px);
+    color: #FFF;
+    gap: 100px;
+}
+
+.reserve .leftSide img{
+    max-width: 500px;
+    border-radius: 50px;
+    margin-left: auto;
+}
+
+.reserve .rightSide{
+    max-width: 20%
+}
+
+.reserve .rightSide form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.reserve .rightSide form label{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+    .reserve .rightSide form p {
+        font-size: 18px;
+    }
+
+    .reserve .rightSide form .formFields input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        outline: 0;
+    }
+
+/*MyReservations*/
+
+.rsTable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 200px);
+    color: #FFF;
+    flex-direction: column;
+}
+
+.rsTable .indexTable {
+    margin-top: 40px;
+    background: #D6E7E2;
+    flex-grow: 1;
+    flex-basis: 500px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 24px;
+    overflow-x: auto;
+    user-select: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    color: #000;
+}
+
+.rsTable .indexTableHeader thead {
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: -24px;
+    background: #D6E7E2;
+}
+
+    .rsTable .indexTableHeader thead th {
+        padding: 12px 10px;
+    }
+
+.rsTable .indexTable .indexTableBody tbody {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.rsTable .indexTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .rsTable .indexTable table td {
+        padding: 20px 0 20px 12px;
+        cursor: default;
+    }
+
+    .rsTable .indexTable table tr td:first-child {
+        padding-left: 10px;
+    }
+
+    .rsTable .indexTable table tbody tr {
+        transition: all 0.3s ease;
+    }
+
+        .rsTable .indexTable table tbody tr:hover {
+            background: #CCD8D5;
+        }
+
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

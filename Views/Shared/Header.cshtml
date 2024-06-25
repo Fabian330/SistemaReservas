@@ -1,0 +1,59 @@
+﻿@using System.Security.Claims;
+@{
+    ClaimsPrincipal claimUser = User;
+    string username = "";
+    string roleId = "";
+    if (claimUser.Identity.IsAuthenticated)
+    {
+        username = claimUser.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value).SingleOrDefault();
+        roleId = claimUser.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value).SingleOrDefault();
+    }
+}
+
+<nav>
+    @if(roleId == "")
+    {
+        <div class="logo">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Reserve.com</a>
+        </div>
+    }
+    else if (roleId == "6")
+    {
+        <div class="logo">
+            <a asp-area="" asp-controller="Home" asp-action="Home">Reserve.com</a>
+        </div>
+    }
+    else if (roleId == "5")
+    {
+        <div class="logo">
+            <a asp-area="" asp-controller="Usuarios" asp-action="Index">Reserve.com</a>
+            <a asp-area="" asp-controller="Usuarios" asp-action="Index">Admin Dashboard</a>
+        </div>
+    }
+
+    @if(roleId == "6")
+    {
+        <div class="navLinks">
+            <a class="sideL" asp-area="" asp-controller="Home" asp-action="Home">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Reserve">Reserve</a>
+            <a class="sideR" asp-area="" asp-controller="Home" asp-action="MyReserves">My reservations</a>
+        </div>
+    }
+    else if(roleId != "6")
+    {
+    }
+
+    @if(username == "")
+    {
+        <div class="login">
+            <a class="btn-reg" asp-area="" asp-controller="Home" asp-action="Register">Sign up</a>
+            <a class="btn-log" asp-area="" asp-controller="Home" asp-action="Login">Sign in</a>
+        </div>
+    }
+    else if (username != "")
+    {
+        <div class="login">
+            <a class="btn-out" asp-area="" asp-controller="Home" asp-action="Logout">Log out</a>
+        </div>
+    }
+</nav>

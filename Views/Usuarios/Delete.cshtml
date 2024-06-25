@@ -1,0 +1,47 @@
+﻿@model SistemaReservas.Models.Usuario
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_AdminLayout";
+}
+
+<div class="AdminContainer">
+<h1>Delete user</h1>
+
+<h3>Are you sure you want to delete this user?</h3>
+<div>
+    <hr />
+    <dl>
+        <dt>
+            Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <dt>
+            Password
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Clave)
+        </dd>
+        <dt>
+            Role
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rol.Nombre)
+        </dd>
+    </dl>
+    
+    <form class="formDelete" asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btnDelete" /> |
+        <a class="btnBack" asp-action="Index">Back to List</a>
+    </form>
+</div>
+</div>
